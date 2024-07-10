@@ -1,17 +1,9 @@
+var  appDiv = document.getElementById("app") ; 
 
-// console.log(b) ; 
-// var a = 5 ; 
-// let b = 10 ; 
-var a = 100 ; 
-var a = 1000000
-let b = 1000 ; 
-{
-    var a = 10 ; 
-    let b = 100 ; 
-    const c = 1000 ; 
-    console.log(b) ; 
-}
+appDiv.querySelector('h1').textContent = "Hello DOM" ;
 
-console.log(a) ; 
-console.log(b) ;
-console.log(c) ; 
+var newParagraph = document.createElement('p') ;
+
+newParagraph.textContent = "This is a paragraph" ; 
+
+appDiv.appendChild(newParagraph) ; 

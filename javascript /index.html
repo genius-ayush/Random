@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove elements in DOM</title>
 </head>
-<body>
-    <div id="app">
-        <h1>Hello world</h1>
-    </div>
-    <script src="index.js"></script>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
 </body>
+
+<script>
+
+    function addLanguage(langName){
+
+        var li = document.createElement("li"); 
+        li.innerHTML = `${langName}` ;
+        document.querySelector(".language").appendChild(li) ;
+    }
+    
+    addLanguage("typescript") ; 
+
+    function addLanguageOpti(langName){
+
+        var li = document.createElement("li") ; 
+        li.appendChild(document.createTextNode(langName)) ;
+        document.querySelector(".language").appendChild(li) ;  
+    }
+
+    function editLanguage( sNo , langName){
+        
+        const element = document.querySelector(`li:nth-child(${sNo})`)
+        const newElement = document.createElement('li');
+        newElement.textContent = langName ; 
+        element.replaceWith(newElement) ; 
+    }
+
+    editLanguage(1 , "Javascript") ; 
+
+    addLanguageOpti("golang")
+
+    function removeElement( sNo){
+        const element = document.querySelector(`li:nth-child(${sNo})`) ;
+        element.remove() ; 
+    }
+
+    removeElement(2) ; 
+</script>
 </html>

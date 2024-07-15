@@ -1,0 +1,99 @@
+ body {
+    height: 100%;
+    margin: 0;
+}
+
+#heading{
+    display: flex;
+    justify-content: center;
+    padding : 15px
+}
+
+.red{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.blue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border: solid;
+    border-color: black; 
+    border-radius: 10px;   
+}
+
+.green{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.yellow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.orange{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.white{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: solid;
+    border-color: black;    
+    border-radius: 10px;
+}
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    gap:20px;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;   
+    text-align: center;
+    
+}

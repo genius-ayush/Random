@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Clock</title>
+</head>
+<body style="background-color: #212121;">
+    <div style="display: flex; flex-direction:column; align-items: center; margin-top:200px;gap: 10px;">
+        <div style="color: white;">Your local time</div>
+        <div class="clock" style="  background-color: #FD9C00; border-radius: 20px; text-align: center; text-align: center; display: flex;align-items: center; padding-left: 25px; padding-right: 25px; padding-top: 25px; padding-bottom: 25px;"></div>
+    </div>
+</body>
+<script>
+    
+    
+    setInterval(function(){
+        let clock = document.getElementsByClassName("clock")[0];
+        console.log(clock)
+        let date = new Date() ;
+        clock.innerHTML = date.toLocaleTimeString()
+        console.log(clock.innerHTML) ;  
+    } , 1000)
+</script>
+</html>

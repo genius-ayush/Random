@@ -1,20 +1,31 @@
-import { useState } from "react";
-import "./App.css";
-import IncreaseDecrease from "./IncreaseDecrease";
-import Cards from "./Cards";
+import React from "react";
 
 function App() {
+  return <div>
+  <Post name={"ayush"} followers={"100"} post={"Hey there i am a dog"} dp={"https://picsum.photos/id/237/200/300"} time={"10min"}/>
+  </div> 
+}
 
-  let propObject ={
-    title : "ayush" , 
-    content : "my hame is ayush"
-  }
-  
+function Post({name , followers , post , dp , time}){
   return (
-    <>
-      {/* <IncreaseDecrease/> */}
-      <Cards object={propObject}/>
-    </>
+    <div style={{borderRadius:10 , borderWidth:2 , width: 300, height: 150 , boxShadow:300 , padding:10}}>
+      <div style={{display:"flex"}}>
+        <div style={{marginRight:'10px'}}>
+          <img
+            src={dp}
+            alt=""
+            srcset=""
+            style={{ borderRadius: 100, width: 50, height: 50 }}
+          />
+        </div>
+        <div>
+          <div style={{fontWeight: "bold"}}>{name}</div>  
+          <div style={{fontWeight:"200"}}>followers {followers}</div>
+          <div style={{fontWeight:"100"}}>{time} </div>
+        </div>
+      </div>      
+      <div style={{fontWeight:"500"}}>{post}</div>
+    </div>
   );
 }
 

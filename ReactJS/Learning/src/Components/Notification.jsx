@@ -14,6 +14,8 @@ function Notification() {
         setCount(current => current+1) ; 
     }
 
+    
+
     // function decreaseCount(){
     //     setCount(count-1); 
     // }

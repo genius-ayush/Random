@@ -3,12 +3,16 @@ import Post from "./Components/Post";
 import Notification from "./Components/Notification";
 import Greetings from "./Components/Greetings";
 import Navbar from "./Components/Navbar";
+import UseRef from "./Components/UseRef";
+import Clock from "./Components/Clock";
 
 function App() {
 
   return (
     <div className="">
-      <Navbar/>
+      <Clock/>
+      {/* <UseRef/> */}
+      {/* <Navbar/> */}
       {/* <Notification/> */}
       {/* <Greetings/> */}
     </div>

@@ -5,12 +5,18 @@ import Greetings from "./Components/Greetings";
 import Navbar from "./Components/Navbar";
 import UseRef from "./Components/UseRef";
 import Clock from "./Components/Clock";
+import Bulb from "./Components/Bulb";
+import Counter from "./Components/Counter";
+import UseFetch from "./Components/UseFetch";
 
 function App() {
 
   return (
     <div className="">
-      <Clock/>
+      <UseFetch/>
+      {/* <Counter/> */}
+      {/* <Bulb/> */}
+      {/* <Clock/> */}
       {/* <UseRef/> */}
       {/* <Navbar/> */}
       {/* <Notification/> */}

@@ -8,19 +8,35 @@ import Clock from "./Components/Clock";
 import Bulb from "./Components/Bulb";
 import Counter from "./Components/Counter";
 import UseFetch from "./Components/UseFetch";
+import Todo from "./Components/Todo";
+import PostRender from "./Components/PostRender";
+import Context from "./Components/Context";
+import Relearn from "./Components/Relearn";
+import IncreaseDecrease from "./Components/IncreaseDecrease";
+import {
+  RecoilRoot,
+} from 'recoil';
 
 function App() {
 
   return (
     <div className="">
-      <UseFetch/>
-      {/* <Counter/> */}
+      {/* <Todo/> */}
+      {/* <UseFetch/> */}
+      {/* <Counter/>  */}
       {/* <Bulb/> */}
       {/* <Clock/> */}
       {/* <UseRef/> */}
       {/* <Navbar/> */}
       {/* <Notification/> */}
       {/* <Greetings/> */}
+      {/* <Post/> */}
+      {/* <PostRender/> */}
+      {/* <Context/> */}
+      {/* <Relearn/> */}
+      <RecoilRoot>
+      <IncreaseDecrease/>
+      </RecoilRoot>
     </div>
   )
 

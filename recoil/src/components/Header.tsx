@@ -1,20 +1,22 @@
-import { BellRingIcon, BriefcaseBusiness, Home, MessageSquareMore, Users } from "lucide-react"
-import {  useRecoilValue, useRecoilValueLoadable,  } from "recoil";
-import { jobNotification, messageNotification, networkNotification, notification } from "../atoms";
-import Me from "./Me";
+import { BellRingIcon, BriefcaseBusiness, CircleUser, Home, MessageSquareMore, Users } from "lucide-react"
+// import {  useRecoilValue, useRecoilValueLoadable, useSetRecoilState,  } from "recoil";
+// import { jobNotification, messageNotification, networkNotification, notification, totalNotifications } from "../atoms";
+// import Me from "./Me";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+import { useRecoilState  } from "recoil";
+import { response } from "../atoms";
+
+
 
 function Header() {
     
-    const myNetworkNoti = useRecoilValue(networkNotification) ; 
-    const jobsNoti = useRecoilValue(jobNotification) ; 
-    const messages = useRecoilValue(messageNotification) ; 
-    // const notifications = useRecoilValue(notification) ; 
-    const notifications = useRecoilValueLoadable(notification) ; 
-
-    // const  setNotifications = useSetRecoilState(notification) ; 
+    
+    
+    const [resp] = useRecoilState(response) ; 
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center w-full h-screen bg-gray-400">
             <div className="flex justify-center gap-14 mt-10  w-2/5 h-20 items-center rounded-lg">
 
                 {/* Home */}
@@ -29,9 +31,9 @@ function Header() {
                 <div className="relative flex flex-col items-center">
                     <div className="relative">
                     <Users className="w-8 h-8 hover:scale-110 transition-transform" />
-                    {myNetworkNoti > 0 && (
+                    {resp.network > 0 && (
                         <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                            {myNetworkNoti >=100 ? "99+" : myNetworkNoti}
+                            {resp.network >=100 ? "99+" : resp.network}
                         </div>
                     )}
                     </div>
@@ -42,9 +44,9 @@ function Header() {
                 <div className="relative flex flex-col items-center">
                     <div className="relative">
                     <BriefcaseBusiness className="w-8 h-8 hover:scale-110 transition-transform" />
-                    {jobsNoti > 0 && (
+                    {resp.notifications > 0 && (
                         <div className="absolute -top-2 right-0 transform translate-x-1/2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                            {jobsNoti >= 100 ? "99+" : jobsNoti}
+                            {resp.notifications >= 100 ? "99+" : resp.notifications}
                         </div>
                     )}
                     </div>
@@ -55,9 +57,9 @@ function Header() {
                 <div className="relative flex flex-col items-center">
                     <div className="relative">
                     <MessageSquareMore className="w-8 h-8 hover:scale-110 transition-transform" />
-                    {messages > 0 && (
+                    {resp.messaging > 0 && (
                         <div className="absolute -top-2 right-0 transform translate-x-1/2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                            {messages >=100 ? "99+" : messages}
+                            {resp.messaging >=100 ? "99+" : resp.messaging}
                         </div>
                     )}
                     </div>
@@ -68,9 +70,9 @@ function Header() {
                 <div className="relative flex flex-col items-center">
                     <div className="relative">
                     <BellRingIcon className="w-8 h-8 hover:scale-110 transition-transform" />
-                    {notifications.contents > 0 && (
+                    {resp.network > 0 && (
                         <div className="absolute -top-2 right-0 transform translate-x-1/2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                            {notifications.contents >= 100 ? "99+" : notifications.contents}
+                            {resp.network >= 100 ? "99+" : resp.network}
                         </div>
                     )}
                     </div>
@@ -78,7 +80,14 @@ function Header() {
                 </div>
 
                 {/* Me */}
-                <Me/>
+                <div className="relative flex flex-col items-center">
+                    <div className="relative">
+                    <CircleUser className="w-8 h-8 hover:scale-110 transition-transform" />
+                    
+                    </div>
+                    <p className="text-sm">Me</p>       
+                    {/* <p>{totalNotification}</p>  */}
+                </div>
                 
 
             </div>

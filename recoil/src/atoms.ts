@@ -1,21 +1,21 @@
-import { atom } from "recoil";
+import axios from "axios";
+import { atom, selector } from "recoil";
 
-export const networkNotification = atom({
-    key: "networkNotification" , 
-    default: 0
+export const response = atom({
+    key: "response",
+    default: selector({
+        key: "responseSelector",
+        get: async () => {
+            const response = await axios.get("http://localhost:3000/notifications");
+            return (response.data);
+        }
+    })
 })
 
-export const messageNotification = atom({
-    key: "messageNotification" , 
-    default: 12
-})
-
-export const notification = atom({
-    key: "notification" , 
-    default: 90
-})
-
-export const jobNotification = atom({
-    key: "jobNotification" , 
-    default: 14
+export const totalNotifications = selector({
+    key: "totalNotifictions",
+    get: ({ get }) => {
+        const ans = get(response).network + get(response).notifications + get(response).messaging;
+        return ans;
+    }
 })
